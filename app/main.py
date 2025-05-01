@@ -57,6 +57,10 @@ def home():
         return render_template_string(HTML_PAGE, submitted=True, name=name, age=age, symptoms=symptoms)
     return render_template_string(HTML_PAGE, submitted=False)
 
+import os
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    host = '127.0.0.1' if os.environ.get('FLASK_ENV') == 'development' else '0.0.0.0'
+    app.run(host=host, port=5000)
+
 
