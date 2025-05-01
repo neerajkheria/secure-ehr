@@ -60,7 +60,6 @@ def home():
 import os
 
 if __name__ == '__main__':
-    host = '127.0.0.1' if os.environ.get('FLASK_ENV') == 'development' else '0.0.0.0'
-    app.run(host=host, port=5000)
+    app.run(host='127.0.0.1', port=5000)
 
 
